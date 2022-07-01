@@ -13,7 +13,12 @@ int main(void)
 	char lowCase = 'a';
 	
 	for (; lowCase <= 'z'; lowCase++)
+	{
+		if (lowCase == 'q' || lowCase == 'e')
+			continue;
+		else
 		putchar(lowCase);
+	}
 	putchar('\n');
 	
 	return (0);
