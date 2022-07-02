@@ -39,7 +39,6 @@ int main(void)
 					putchar(second_pair_2);
 					putchar(',');
 					putchar(' ');
-					//}
 				};
 			};
 		};
