@@ -35,7 +35,7 @@ int main(void)
 					putchar(first_pair_1);
 					putchar(first_pair_2);
 					putchar(' ');
-					putchar(second_pair_1);	
+					putchar(second_pair_1);
 					putchar(second_pair_2);
 					putchar(',');
 					putchar(' ');
