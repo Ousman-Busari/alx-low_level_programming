@@ -15,12 +15,16 @@ int main(void)
 	for (d = '0'; d < '9'; d++)
 	{
 		int temp;
+
 		for (temp = d + 1; temp <= '9'; temp++)
 		{
 			putchar(d);
 			putchar(temp);
-			putchar(',');
-			putchar(' ');
+			if (d != '8');
+			{
+				putchar(',');
+				putchar(' ');
+			};
 		};
 	};
 
