@@ -32,15 +32,13 @@ int main(void)
 					temp_2nd_2nd = first_pair_2 + 1;
 				for (second_pair_2 = temp_2nd_2nd; second_pair_2 <= '9'; second_pair_2++)
 				{
-					/*if (second_pair_1 !=  && second_pair_2 != )
-					//{*/
-						putchar(first_pair_1);
-						putchar(first_pair_2);
-						putchar(' ');
-						putchar(second_pair_1);
-						putchar(second_pair_2);
-						putchar(',');
-						putchar(' ');
+					putchar(first_pair_1);
+					putchar(first_pair_2);
+					putchar(' ');
+					putchar(second_pair_1);	
+					putchar(second_pair_2);
+					putchar(',');
+					putchar(' ');
 					//}
 				};
 			};
