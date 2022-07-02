@@ -26,10 +26,14 @@ int main(void)
 			{
 				int second_pair_2, temp_2nd_2nd;
 
-				if (first_pair_2 == '9' && first_pair_1 == '0')
+				if (first_pair_1 == '0' && first_pair_2 == '0')
 					temp_2nd_2nd = '0';
-				else
+				else if (first_pair_1 == '0' && first_pair_2 != '0')
 					temp_2nd_2nd = first_pair_2 + 1;
+				else if (first_pair_1 != '0' && first_pair_2 != '9')
+					temp_2nd_2nd = first_pair_2 + 1;
+				else if( first_pair_1 != '0' &&  first_pair_2 == '9')
+					temp_2nd_2nd = '0';
 				for (second_pair_2 = temp_2nd_2nd; second_pair_2 <= '9'; second_pair_2++)
 				{
 					putchar(first_pair_1);
