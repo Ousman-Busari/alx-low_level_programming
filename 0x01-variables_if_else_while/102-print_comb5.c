@@ -23,7 +23,7 @@ int main(void)
 			if (first_pair_2 != '9')
 			{
 				second_pair_1 = first_pair_1;
-			} else 
+			} else
 			{
 				second_pair_1 = first_pair_1 + 1;
 			};
