@@ -26,7 +26,7 @@ int main(void)
 			{
 				int second_pair_2, temp_2nd_2nd;
 
-				if (first_pair_2 == '9' || first_pair_1 == '0')
+				if (first_pair_2 == '9' && first_pair_1 == '0')
 					temp_2nd_2nd = '0';
 				else
 					temp_2nd_2nd = first_pair_2 + 1;
