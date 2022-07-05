@@ -6,9 +6,7 @@
  *
  * Return: nothing yet
  */
-
-void main(void)
+int _putchar(void)
 {
-	int i;
-	_putchar()
+	return(write(1, &c, 1));
 }
