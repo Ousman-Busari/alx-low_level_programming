@@ -2,7 +2,7 @@
 
 /**
  * main - desciption
- *
+ * prints the english alphabets in order
  * Return: nothing
  */
 
