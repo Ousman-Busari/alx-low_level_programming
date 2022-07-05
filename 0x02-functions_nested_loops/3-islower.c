@@ -2,8 +2,8 @@
 
 /**
  * _islower - determine lower or upper case character
- * @c - parameter
- * c - the the test it to be carried 
+ * @c: - parameter
+ * c - the the test it to be carried
  * Return: 1 or 0
  */
 
