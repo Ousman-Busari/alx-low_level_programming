@@ -19,8 +19,11 @@ void print_to_98(int c)
 				a *= -1;
 			}
 			if (a >= 100)
+			{
 				_putchar((a / 100) + '0');
-			_putchar((a / 10) + '0');
+				_putchar(((a % 100) / 10) + '0');
+			} else
+				_putchar((a / 10) + '0');
 			_putchar((a % 10) +'0');
 			if (a != 98)
 			{
@@ -33,8 +36,11 @@ void print_to_98(int c)
 		for (a = c; a >= 98; a--)
 		{
 			if ( a >= 100)
+			{
 				_putchar((a / 100) + '0');
-			_putchar((a / 10) + '0');
+				_putchar(((a % 100) / 10) + '0');
+			}else 
+				_putchar((a / 10) + '0');
 			_putchar((a % 10) + '0');
 			if (a != 98)
 			{
