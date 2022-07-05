@@ -7,7 +7,7 @@
  * Return: 1 or 0 based on condiotion
  */
 
-int -isalpha(int c)
+int _isalpha(int c)
 {
 	int result;
 
@@ -16,4 +16,4 @@ int -isalpha(int c)
 	else
 		result = 0;
 	returm (result);
-}
+i}
