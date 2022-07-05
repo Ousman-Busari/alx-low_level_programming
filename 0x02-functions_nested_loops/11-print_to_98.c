@@ -9,13 +9,28 @@ void print_to_98(int c)
 {
 	int a;
 
-	if (int c <= 98)
+	if (c <= 98)
 	{
 		for (a = c; a <= 98; a++)
-			printf("%d", a);
+		{
+			_putchar((a / 10) + '0');
+			_putchar((a % 10) +'0');
+			if (c != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
 	} else 
 	{
 		for (a = c; a >= 98; a--)
-			printf("%d", a);
+		{
+			_putchar((a / 10) + '0');
+			_putchar((a % 10) + '0');
+			if (c != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 	}
 }
