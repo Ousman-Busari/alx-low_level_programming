@@ -2,7 +2,7 @@
 
 /**
  * _islower - determine lower or upper case character
- * return 1 if uppercase, 0 otherwise
+ * c - the input the test it to be carried out on
  * Return: 1 or 0
  */
 
@@ -12,8 +12,7 @@ int _islower(int c)
 
 	if (c >= 97 && c <= 1220)
 		result = 1;
-	else 
+	else
 		result = 0;
-
 	return(result);
 }
