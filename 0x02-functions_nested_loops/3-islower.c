@@ -2,7 +2,8 @@
 
 /**
  * _islower - determine lower or upper case character
- * c - the input the test it to be carried out on
+ * @c - parameter
+ * c - the the test it to be carried 
  * Return: 1 or 0
  */
 
@@ -14,5 +15,5 @@ int _islower(int c)
 		result = 1;
 	else
 		result = 0;
-	return(result);
+	return (result);
 }
