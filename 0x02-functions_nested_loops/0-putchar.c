@@ -1,4 +1,4 @@
-#include <unitstd.h>
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -12,9 +12,9 @@ int main(void)
 	int i;
 
 	char word[7] = "_putchar";
-	for (i  = 0; i < 8; i++)
+	for (i = 0; i < 8; i++)
 		_putchar(word[i]);
 
 	_putchar('\n');
-	return(0);
+	return (0);
 }
