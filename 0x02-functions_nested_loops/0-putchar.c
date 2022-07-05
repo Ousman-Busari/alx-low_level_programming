@@ -1,14 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "main.h"
 
 /**
  * main - Entry point
  *
- * Return: Always 0 (Success)
+ * Return: void
  */
 
 void main()
 {
-	printf("_putchar\n");
+	int i;
+
+	char word[7] = "_putchar";
+	for (i  = 0; i < 8; i++)
+		_putchar(word[i]);
+	_putchar('\n');
 }
