@@ -4,10 +4,10 @@
 /**
  * main - Entry point
  *
- * Return: void
+ * Return: 0
  */
 
-void main(void)
+int main(void)
 {
 	int i;
 
@@ -16,5 +16,5 @@ void main(void)
 		_putchar(word[i]);
 
 	_putchar('\n');
-	return;
+	return(0);
 }
