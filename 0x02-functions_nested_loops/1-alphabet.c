@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - desciption
+ * print_alphabet - desciption
  * prints the english alphabets in order
  * Return: nothing
  */
