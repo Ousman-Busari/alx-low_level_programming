@@ -15,7 +15,7 @@ void print_to_98(int c)
 		{
 			_putchar((a / 10) + '0');
 			_putchar((a % 10) +'0');
-			if (c != 98)
+			if (a != 98)
 			{
 				_putchar(',');
 				_putchar(' ');
@@ -27,7 +27,7 @@ void print_to_98(int c)
 		{
 			_putchar((a / 10) + '0');
 			_putchar((a % 10) + '0');
-			if (c != 98)
+			if (a != 98)
 			{
 				_putchar(',');
 				_putchar(' ');
