@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * jack_bauer - 
+ * jack_bauer - 24 hours count
  *
- * Return: 
+ * Return: nothing
  */
 
 void jack_bauer(void)
