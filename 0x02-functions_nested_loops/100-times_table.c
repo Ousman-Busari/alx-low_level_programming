@@ -19,10 +19,13 @@ void print_times_table(int m)
 			for (i = 0; i <= m; i++)
 			{
 				n = a * i;
-				if (n == 0)
+				if (n < 10)
 				{
 					if (i != 0)
+					{
 						_putchar(' ');
+						_putchar(' ');
+					}
 					_putchar(n + '0');
 					if (i != m)
 					{
@@ -32,11 +35,7 @@ void print_times_table(int m)
 	
 				} else
 				{
-					if (n < 10)
-					{
-						_putchar(' ');
-						_putchar(' ');
-					} else if (n < 100)
+					if (n < 100)
 					{
 						_putchar(' ');
 						_putchar((n / 10) + '0');
