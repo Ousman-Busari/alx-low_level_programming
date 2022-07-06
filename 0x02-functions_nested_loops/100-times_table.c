@@ -27,12 +27,6 @@ void print_times_table(int m)
 						_putchar(' ');
 					}
 					_putchar(n + '0');
-					if (i != m)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
-	
 				} else
 				{
 					if (n < 100)
@@ -45,11 +39,11 @@ void print_times_table(int m)
 						_putchar(((n % 100) / 10) + '0');
 					}
 					_putchar((n % 10) + '0');
-					if (i != m)
-					{
-						_putchar(',');
-						_putchar(' ');
-					}
+				}
+				if (i != m)
+				{
+					_putchar(',');
+					_putchar(' ');
 				}
 			}
 			_putchar('\n');
