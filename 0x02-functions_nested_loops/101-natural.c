@@ -4,7 +4,7 @@
 /**
  * main -the process
  *
- * Return: nothing
+ * Return: Always 0 (Success)
  */
 
 int main(void)
@@ -18,5 +18,5 @@ int main(void)
 			sum += i;
 	}
 	printf("%d\n", sum);
-	return (sum);
+	return (0);
 }
