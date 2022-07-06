@@ -21,9 +21,12 @@ void print_to_98(int c)
 				{
 					_putchar((b / 100) + '0');
 					_putchar(((b % 100) / 10) + '0');
-				} else if (b > 100)
+					_putchar((b % 10) + '0');
+				} else if (b > 10)
+				{
 					_putchar((b / 10) + '0');
-				else
+					_putchar((b % 10) + '0');
+				}else
 					_putchar((b % 10) + '0');
 			} else if (a < 10)
 				_putchar(a + '0');
