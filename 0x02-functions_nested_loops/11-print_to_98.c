@@ -16,15 +16,18 @@ void print_to_98(int c)
 			if (a < 0)
 			{
 				_putchar('-');
-				a *= -1;
-				if (a >= 100)
+				b = -1 * a;
+				if (b >= 100)
 				{
-					_putchar((a / 100) + '0');
-					_putchar(((a % 100) / 10) + '0');
-				} else
-					_putchar((a / 10) + '0');
-				_putchar((a % 10) + '0');
-			} else
+					_putchar((b / 100) + '0');
+					_putchar(((b % 100) / 10) + '0');
+				} else if (b > 100)
+					_putchar((b / 10) + '0');
+				else
+					_putchar((b % 10) + '0');
+			} else if (a < 10)
+				_putchar(a + '0');
+			else 
 			{
 				_putchar((a / 10) + '0');
 				_putchar((a % 10) +'0');
