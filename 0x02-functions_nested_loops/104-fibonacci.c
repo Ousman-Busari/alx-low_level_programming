@@ -9,6 +9,7 @@
 int main(void)
 {
 	int i;
+
 	long double fib1 = 1, fib2 = 2, fib;
 
 	printf("%.0Lf, %.0Lf, ", fib1, fib2);
