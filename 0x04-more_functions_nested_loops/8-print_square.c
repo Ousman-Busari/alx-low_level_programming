@@ -2,7 +2,7 @@
 
 /**
  * print_square - row times column
- * @n: size of the sqaure
+ * @s: size of the sqaure
  *
  * Return: nothing
  */
@@ -14,11 +14,9 @@ void print_square(int s)
 	if (s > 0)
 	{
 		i = s;
-
 		while (i > 0)
 		{
 			j = s;
-
 			while (j > 0)
 			{
 				_putchar('#');
@@ -27,6 +25,6 @@ void print_square(int s)
 			_putchar('\n');
 			i--;
 		}
-	}else
+	} else
 		_putchar('\n');
 }
