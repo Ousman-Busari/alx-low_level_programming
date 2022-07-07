@@ -11,7 +11,7 @@ int _isdigit(int n)
 {
 	int result;
 
-	if (n >= 48 && n <= 58)
+	if (n >= 48 && n <= 57)
 		result = 1;
 	else
 		result = 0;
