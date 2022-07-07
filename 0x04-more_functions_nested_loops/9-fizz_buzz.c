@@ -1,11 +1,11 @@
 #include <stdio.h>
 
 /**
- * main - entrance
+ * main - Entry point
  *
- * Return: Alays 0 (Success)
+ * Return: Always 0 (Success)
  */
-
+i
 int main(void)
 {
 	int i;
