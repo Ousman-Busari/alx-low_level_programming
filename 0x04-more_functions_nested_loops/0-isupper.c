@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * _issupper - checks if a letter is uppercase
+ * _isupper - checks if a letter is uppercase
  * @c: the passed parameter
  *
  * Return: 1 if true, 0 otherwise
  */
 
-int _issupper(int c)
+int _isupper(int c)
 {
 	int result;
 
