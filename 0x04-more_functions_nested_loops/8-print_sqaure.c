@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * print_sqaure - row times column
+ * print_square - row times column
  * @n: size of the sqaure
  *
  * Return: nothing
  */
 
-void print_sqaure(int s)
+void print_square(int s)
 {
 	int i, j;
 
