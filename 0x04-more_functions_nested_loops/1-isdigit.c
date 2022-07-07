@@ -4,7 +4,7 @@
  * _isdigit - check if it is a natural number
  *  @n: the input number
  *
- *  Return: Always 0 or 1
+ *  Return: i if true, 0 otherwise
  */
 
 int _isdigit(int n)
