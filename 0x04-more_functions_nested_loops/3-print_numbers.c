@@ -3,7 +3,7 @@
 /**
  * print_numbers - prints all natural numbers
  *
- * Return: nothing
+ * Return: Always 0
  */
 
 void print_numbers(void)
