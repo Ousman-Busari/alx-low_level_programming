@@ -28,4 +28,3 @@ void print_square(int s)
 	} else
 		_putchar('\n');
 }
-
