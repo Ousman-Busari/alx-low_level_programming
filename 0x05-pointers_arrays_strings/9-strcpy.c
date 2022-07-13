@@ -8,7 +8,7 @@
  * Return: Always a pointer
  */
 
-char _strcpy(char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	char *result = dest;
 
