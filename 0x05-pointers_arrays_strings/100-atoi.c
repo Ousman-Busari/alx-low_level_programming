@@ -15,12 +15,12 @@ int _atoi(char *s)
 
 	while (*s)
 	{
-		if (*s == "-")
+		if (*s == '-')
 			sign *= -1;
 		if (*s >= '0' && *s <= '9')
 		{
 			skipper = 1;
-			integer = interger * 10 + *s - '0';
+			integer = integer * 10 + *s - '0';
 		} else if (skipper)
 			break;
 		s++;
