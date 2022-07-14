@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	char *str = "Hello";
+	char *str = "Hello there";
 
 	while(*str)
 	{
