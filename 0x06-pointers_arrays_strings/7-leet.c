@@ -7,7 +7,7 @@
  * Return: pointer to the resulting dtring
  */
 
-char leet(char *str)
+char *leet(char *str)
 {
 	int i = 0, j;
 	char sub[10] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'},
