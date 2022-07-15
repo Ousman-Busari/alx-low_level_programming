@@ -4,6 +4,8 @@
 int main(void)
 {
 	print_number(2987);
-	//printf("%d\n", r);
+	_putchar('\n');
+	print_number(-98);
+	_putchar('\n');
 	return (0);
 }
