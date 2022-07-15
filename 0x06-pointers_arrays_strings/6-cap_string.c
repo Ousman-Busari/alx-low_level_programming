@@ -9,14 +9,13 @@
 
 char *cap_string(char *str)
 {
-	int i;
+	int j , k;
 	char *result = str;
 	char separator[13] = { ' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}' };
 
 	while (*str)
 	{
-		int j = 0, k = 0;
-
+		j = k = 0;
 		for (; j < 13; j++)
 		{
 			if (*str == separator[j])
