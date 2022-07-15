@@ -4,7 +4,7 @@
  * cap_string - capitalize all words of a string
  * @str: the input string
  *
- * Return: the resulting string
+ * Return: pointer to the resulting string
  */
 
 char *cap_string(char *str)
@@ -29,4 +29,3 @@ char *cap_string(char *str)
 	}
 	return (result);
 }
-
