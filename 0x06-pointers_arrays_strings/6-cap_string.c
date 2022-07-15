@@ -9,18 +9,16 @@
 
 char *cap_string(char *str)
 {
-	int i = 0;
-	int j;
-	int k;
-	char *result = str;
-	char separator[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	int i = 0, j, k;
+	char *result = str,
+	     separator[13] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 
 	while (str[i])
 	{
-		j = k = 0;
+		k = 0;
 		if (i == 0 && (str[i] >= 'a' && str[i] <= 'z'))
 			str[i] -= 32;
-		for (; j < 13; j++)
+		for (j = 0; j < 13; j++)
 		{
 			if (str[i] == separator[j])
 				k = 1;
@@ -31,3 +29,4 @@ char *cap_string(char *str)
 	}
 	return (result);
 }
+
