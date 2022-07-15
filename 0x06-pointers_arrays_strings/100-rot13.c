@@ -10,6 +10,7 @@
 char *rot13(char *s)
 {
 	int i = 0;
+	char *result = s;
 
 	while (s[i] != '\0')
 	{
@@ -21,10 +22,9 @@ char *rot13(char *s)
 				continue;
 			}
 			s[i] -= 13;
-			break;
+			i++;
 		}
-		i++;
 	}
-	return (s);
+	return (result);
 }
 
