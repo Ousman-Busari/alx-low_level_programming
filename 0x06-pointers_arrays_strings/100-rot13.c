@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * rot13 - rotate in 13 places
+ * rot13 - rotate in thirteen places
  * @s: the string to rotate
+ *
  * Return: the pointer to the resulting string
  */
 
