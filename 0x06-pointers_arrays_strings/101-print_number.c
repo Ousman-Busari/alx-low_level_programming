@@ -9,8 +9,14 @@
 
 void print_number(int n)
 {
-	int expo10 = 10, div = n / 10;
+	int expo10 = 10, div;
 
+	if(n > 0)
+	{
+		_putchar('-');
+		n *= -1;
+	}
+	div = n / 10;
 	while (div > 9)
 	{
 		div /= 10;
@@ -22,5 +28,4 @@ void print_number(int n)
 		n %= expo10;
 		expo10 /= 10;
 	}
-	_putchar('\n');
 }
