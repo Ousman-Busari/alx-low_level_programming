@@ -14,9 +14,9 @@ char *leet(char *str)
 	char sub[10] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
 	char cha[10] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 
-	while(str[i])
+	while (str[i])
 	{
-		for(j = 0; j < 10; j++)
+		for (j = 0; j < 10; j++)
 		{
 			if (str[i] == cha[j])
 				str[i] = sub[j];
