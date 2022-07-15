@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "main.h"
+#include <limits.h>
 
 int main(void)
 {
-	print_number(-2147483647);
+	printf("%d\n", INT_MIN);
+	print_number(INT_MIN);
 	_putchar('\n');
 	print_number(402);
 	_putchar('\n');
