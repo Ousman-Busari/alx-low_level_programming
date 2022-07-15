@@ -28,7 +28,7 @@ void print_number(int n)
 			div /= 10;
 			expo10 *= 10;
 		}
-		while (expo10 >= 1 )
+		while (expo10 >= 1)
 		{
 			_putchar(n / expo10 + '0');
 			n %= expo10;

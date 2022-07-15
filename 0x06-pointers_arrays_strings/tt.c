@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	print_number(3);
+	print_number(-2147483647);
 	_putchar('\n');
 	print_number(402);
 	_putchar('\n');
