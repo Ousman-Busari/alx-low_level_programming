@@ -1,0 +1,37 @@
+#include <stdio.h>
+#inclde "main.h"
+
+/**
+ * print_remaining_days - takes a date and print how many days you
+ * have left in the year, taking leap year into account
+ * @month: moth in the number format
+ * @day: day of the month
+ * @year: year
+ * Return: nothing
+ */
+
+void print_remaining_days(int month, int day, int year)
+{
+  if (year % 4 == 0 || year % 400 == 0)
+  {
+    if(month >= 2 && day >= 60)
+    {
+      day++;
+    }
+
+    printf("Day of the year: %d\n", day);
+    printf("Remaining days: %d\n", 366 - days);
+  }
+  else
+  {
+    if (month == 2 && day == 60)
+    {
+      printf("Invalid date: %02d/%02d/%02d\n", month, day -31, year);
+    }
+    else
+    {
+      printf("Day of the year: %d\n", day);
+      printf("Remaining days: %d\n", 365 - day);
+    }
+  }
+}
