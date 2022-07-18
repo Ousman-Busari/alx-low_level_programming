@@ -7,6 +7,7 @@
  * @n: number bytes to assign or set
  * Return: pointer to the resulting memory address
  */
+
 char *_memset(char *s, char b, unsigned int n)
 {
   int i;
@@ -15,8 +16,8 @@ char *_memset(char *s, char b, unsigned int n)
   i = 0;
   while (i < n)
   {
-    s[i] = b;
-    i++;
+    *s = b;
+    s++, i++;
   }
   return (result);
 }
