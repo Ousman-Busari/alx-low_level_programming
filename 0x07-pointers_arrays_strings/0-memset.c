@@ -5,6 +5,7 @@
  * @s: the memoty address
  * @b: the char to assign to the specified memory space
  * @n: number bytes to assign or set
+ *
  * Return: pointer to the resulting memory address
  */
 
