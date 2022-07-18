@@ -11,6 +11,7 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int c = 0, i_o;
 	char *initial = accept;
+
 	while (*s)
 	{
 		i_o = 0;
