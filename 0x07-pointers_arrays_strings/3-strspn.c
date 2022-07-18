@@ -1,0 +1,33 @@
+#include "main.h"
+
+/**
+ * _strspn - gts the length of a prefix substring
+ * @s: the nase string
+ * @accept: the substring
+ * Return: an unsigned int
+ */
+
+unsigned int _strspn(char *s, char *accept)
+{
+	unsigned int c = 0, i_o;
+	char *initial = accept;
+	while (*s)
+	{
+		i_o = 0;
+		while (*accept)
+		{
+			if (*accept == *s)
+			{
+				c++;
+				i_o = 1;
+				break;
+			}
+			accept++;
+		}
+		s++;
+		accept = initial;
+		if (i_o == 0)
+			break;
+	}
+	return (c);
+}
