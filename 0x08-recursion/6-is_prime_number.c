@@ -20,7 +20,8 @@ int is_prime_number(int n)
 }
 
 /**
- * div_within_lower_half - finds if there is a number that can divide an integer
+ * div_within_lower_half - finds if there is a
+ * number that can divide an integer
  * within it's first half value
  * @n: the input integer
  * @lower_half: the lower half region of the input integer
