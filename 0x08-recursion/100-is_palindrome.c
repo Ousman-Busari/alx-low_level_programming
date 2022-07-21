@@ -11,7 +11,7 @@ int cmp_char(char *s, int len);
 int is_palindrome(char *s)
 {
 	int len = _strlen_recursion(s);
-	
+
 	if (len <= 1)
 		return (1);
 	return (cmp_char(s, len));
