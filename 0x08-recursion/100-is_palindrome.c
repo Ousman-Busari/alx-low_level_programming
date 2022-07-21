@@ -48,5 +48,5 @@ int cmp_char(char *s, int len)
 		return (1);
 	else if (*s == *(s + len - 1))
 		return (cmp_char(s + 1, len - 2));
-       	return (0);
+	return (0);
 }
