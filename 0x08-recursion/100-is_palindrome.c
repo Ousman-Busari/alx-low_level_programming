@@ -21,6 +21,7 @@ int is_palindrome(char *s)
  * cmp_char - comapre characters at different position
  * @s: the input string
  * @len: position of the character to compare
+ *
  * Return: reversed string, one char at a time
  */
 
