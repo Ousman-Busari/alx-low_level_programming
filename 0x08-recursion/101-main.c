@@ -12,7 +12,7 @@ int main(void)
 
 	r = wildcmp("main.c", "*.c");
 	printf("%d\n", r);
-	r = wildcmp("main.c", "m*a*i*n*.*c*");
+	r = wildcmp("school.c", "sch********************************c");
 	printf("%d\n", r);
 	r = wildcmp("main.c", "main.c");
 	printf("%d\n", r);
