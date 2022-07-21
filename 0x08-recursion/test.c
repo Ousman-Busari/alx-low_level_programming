@@ -2,8 +2,18 @@
 
 int main(void)
 {
-	char *s = "";
-	printf("size of s = %ld\n", sizeof(s));
-	printf("%c", --s);
+	char *s;
+
+	s = rev_string("let's do it");
+	printf("content of s = %s\n", s);
 	return (0);
+}
+
+int rev_string(char *s)
+{
+	if (*s)
+	{
+		rev_string(s + 1);
+		_putchar(s);
+	}
 }
