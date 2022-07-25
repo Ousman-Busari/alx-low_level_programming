@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 		}
 		if (rem >= 25)
 		{
-			c += rem /25;
+			c += rem / 25;
 			rem %= 25;
 		}
 		if (rem >= 10)
