@@ -5,7 +5,7 @@
  * strtow - splits a string into words
  * @str: input pointing to the string to split
  *
- * Return: Apointer to concatened strings or NULL if it str is NULL
+ * Return: pointer to concatened strings or NULL
  */
 
 char **strtow(char *str)
@@ -18,7 +18,8 @@ char **strtow(char *str)
 	for (; str[i]; i++)
 	{
 		if ((str[i] != ' ' || *str != '\t') &&
-		    ((str[i + 1] == ' ' || str[i + 1] == '\t') || str[i + 1] == '\n'))
+		    ((str[i + 1] == ' ' || str[i + 1] == '\t')
+		     || str[i + 1] == '\n'))
 			count++;
 	}
 	if (count == 0)
@@ -47,6 +48,5 @@ char **strtow(char *str)
 			array[k++][m] = '\0';
 		}
 	}
-	array[k] = NULL;
 	return (array);
 }
