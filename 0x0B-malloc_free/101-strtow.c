@@ -23,7 +23,7 @@ char **strtow(char *str)
 	}
 	if (count == 0)
 		return (NULL);
-	array = malloc(sizeof(char *) * (count + 1));
+	array = malloc(sizeof(char *) * (count));
 	if (array == NULL)
 		return (NULL);
 	for (i = 0; str[i] != '\0' && k < count; i++)
@@ -48,6 +48,6 @@ char **strtow(char *str)
 			array[k++][m] = '\0';
 		}
 	}
-	array[k] = NULL;
+	array[k] = NULL, free(array[k]);
 	return (array);
 }
