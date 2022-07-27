@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * strtow - splits a string into words
@@ -48,6 +49,5 @@ char **strtow(char *str)
 			array[k++][m] = '\0';
 		}
 	}
-	array[k] = NULL, free(array[k]);
 	return (array);
 }
