@@ -21,7 +21,7 @@ char **strtow(char *str)
 	{
 		if ((str[i] != ' ' && str[i] != '\t')\
 		    && ((str[i + 1] == ' ' || str[i + 1] == '\t')\
-			|| str[i + 1] == '\0'))
+			|| str[i + 1] == '\0' || str[i + 1] == '\n'))
 			count++;
 	}
 
