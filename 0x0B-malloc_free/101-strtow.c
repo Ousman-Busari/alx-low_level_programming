@@ -36,10 +36,10 @@ char **strtow(char *str)
 			while ((str[j] != ' ' && str[j] != '\t')
 			       && str[j] != '\0')
 				j++, len++;
-			array[k] = malloc((j) * sizeof(char));
+			array[k] = malloc((j + 1) * sizeof(char));
 			if (array[k] == NULL)
 			{
-				for (k = k - 1; k >= 0; k++)
+				for (; k >= 0; k++)
 					free(array[k]);
 				free(array);
 				return (NULL);
