@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 /**
  * strtow - splits a string into words
@@ -24,7 +23,7 @@ char **strtow(char *str)
 	}
 	if (count == 0)
 		return (NULL);
-	array = malloc(sizeof(char *) * (count));
+	array = malloc(sizeof(char *) * (count + 1));
 	if (array == NULL)
 		return (NULL);
 	for (i = 0; str[i] != '\0' && k < count; i++)
