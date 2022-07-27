@@ -39,7 +39,7 @@ char **strtow(char *str)
 			array[k] = malloc((j + 1) * sizeof(char));
 			if (array[k] == NULL)
 			{
-				for (; k >= 0; k++)
+				for (k = k - 1; k >= 0; k--)
 					free(array[k]);
 				free(array);
 				return (NULL);
