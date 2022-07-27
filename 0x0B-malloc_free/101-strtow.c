@@ -21,14 +21,15 @@ char **strtow(char *str)
 	{
 		if ((str[i] != ' ' && str[i] != '\t')\
 		    && ((str[i + 1] == ' ' || str[i + 1] == '\t')\
-			|| str[i + 1] == '\n'))
+			|| str[i + 1] == '\0'))
 			count++;
 	}
 
+	printf("%d\n", count);
 	if (count == 0)
 		return (NULL);
 
-	array = malloc(sizeof(char *) * (count + 1));
+	array = malloc(sizeof(char *) * (count));
 
 	if (array == NULL)
 		return (NULL);
