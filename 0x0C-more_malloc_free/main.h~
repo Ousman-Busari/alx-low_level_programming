@@ -1,2 +1,0 @@
-int _putchar(char c);
-void *malloc_check(unsigned int b);
