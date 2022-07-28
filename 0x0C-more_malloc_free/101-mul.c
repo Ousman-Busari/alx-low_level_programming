@@ -8,7 +8,7 @@
  * @argc: number of positive numbers
  * @argv: stores the positive numbers
  *
- * Return: result of the mutiplication, or 98 when exited
+ * Return: Always Success 0
  */
 
 int main(int argc, char *argv[])
@@ -38,5 +38,5 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[2]);
 	mul = num1 * num2;
 	printf("%lu\n", mul);
-	return (mul);
+	return (0);
 }
