@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	while (argc-- > 1)
+/*	while (argc-- > 1)
 	{
 		for (i = 0; argv[argc][i]; i++)
 		{
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-
+*/
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 	mul = num1 * num2;
