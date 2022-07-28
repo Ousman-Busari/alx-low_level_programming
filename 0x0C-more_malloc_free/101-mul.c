@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
+#include <ctype.h>
 
 /**
  * main - multiplies two positive numbers
@@ -13,11 +14,24 @@
 int main(int argc, char *argv[])
 {
 	unsigned long mul, num1, num2;
+	int i = 0;
 
 	if (argc != 3)
 	{
 		printf("Error\n");
 		exit(98);
+	}
+
+	while (argc-- > 1)
+	{
+		for (; argv[argc][i]; i++)
+		{
+			if (!(isdigit(argv[argc][i])))
+			{
+				printf("Error\n");
+				exit(98);
+			}
+		}
 	}
 
 	num1 = atoi(argv[1]);
