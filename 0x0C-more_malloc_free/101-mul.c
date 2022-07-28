@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
+#include <string.h>
 #include <ctype.h>
 
 /**
@@ -14,7 +14,7 @@
 int main(int argc, char *argv[])
 {
 	unsigned long mul, num1, num2;
-	int i = 0;
+	int i;
 
 	if (argc != 3)
 	{
@@ -24,12 +24,12 @@ int main(int argc, char *argv[])
 
 	while (argc-- > 1)
 	{
-		for (; argv[argc][i]; i++)
+		for (i = 0; argv[argc][i]; i++)
 		{
 			if (!(isdigit(argv[argc][i])))
 			{
 				printf("Error\n");
-				exit(98);
+				return (98);
 			}
 		}
 	}
