@@ -25,28 +25,23 @@ dog_t *new_dog(char *name, float age, char *owner)
 	while (owner[owner_len++])
 		;
 	new_ptr = malloc(sizeof(dog_t));
-
 	if (new_ptr == NULL)
 		return (NULL);
 
 	name_copy = malloc(name_len + 1);
 	if (name_copy == NULL)
 		return (NULL);
-
-	for(i = 0; i < name_len; i++)
+	for (i = 0; i < name_len; i++)
 		name_copy[i] = name[i];
 	name_copy[i] = '\0';
-
 	owner_copy = malloc(owner_len + 1);
 	if (owner_copy == NULL)
 		return (NULL);
-
 	for (i = 0; i < owner_len; i++)
-		owner_copy[i] = owner [i];
+		owner_copy[i] = owner[i];
 	owner_copy[i] = '\0';
-
 	new_ptr->name = name_copy;
-	new_ptr->age= age;
+	new_ptr->age = age;
 	new_ptr->owner = owner_copy;
 	return (new_ptr);
 }
