@@ -31,6 +31,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (name_copy == NULL)
 	{
 		free(new_ptr);
+		free(name_copy);
 		return (NULL);
 	}
 	for (i = 0; i < name_len; i++)
