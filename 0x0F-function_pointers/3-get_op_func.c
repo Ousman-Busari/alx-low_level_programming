@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * get-op_func - select the correct function to perform the operation ask by user
+ * get-op_func - select the correct function to perform the 
+ * operation ask by user
  * @s: the operator character
  * Return: the result of the right opeartion
  */
