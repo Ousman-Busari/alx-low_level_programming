@@ -3,7 +3,7 @@
 #include <stddef.h>
 
 /**
- * array_interator - executes a function given as a parameter on each
+ * array_iterator - executes a function given as a parameter on each
  * element of an array
  * @array: array of data
  * @size: size of the array
