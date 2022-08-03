@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
- * get-op_func - select the correct function to perform the 
+ * get_op_func - select the correct function to perform the
  * operation ask by user
  * @s: the operator character
  * Return: the result of the right opeartion
  */
 
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(char *s))(int a, int b)
 {
 	op_t ops[] = {
 		{"+", op_add},
