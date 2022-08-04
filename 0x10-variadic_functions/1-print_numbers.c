@@ -13,14 +13,12 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
-	unsigned int i = 0;
-	int nums;
+	unsigned int i ;
 
 	va_start(ap, n);
-	for (; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		nums = va_arg(ap, int);
-		printf("%d", nums);
+		printf("%d", va_arg(ap, int));
 		if (separator == NULL)
 			continue;
 		if (i < n - 1)
