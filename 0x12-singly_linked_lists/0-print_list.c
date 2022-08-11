@@ -11,7 +11,7 @@
 
 size_t print_list(const list_t *h)
 {
-	long unsigned int n = 0;
+	unsigned long int n = 0;
 
 	while (h)
 	{
