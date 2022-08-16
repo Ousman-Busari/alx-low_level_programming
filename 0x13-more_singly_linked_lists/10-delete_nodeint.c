@@ -20,8 +20,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	if (head == NULL)
 		return (-1);
 	temp1 = *head;
-	while (temp1 == temp1->next)
+	while (temp1)
+	{
+		temp1 = temp1->next;
 		c++;
+	}
 	if (index > c)
 		return (-1);
 
