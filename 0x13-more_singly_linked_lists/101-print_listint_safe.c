@@ -21,7 +21,7 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *)temp, temp->n);
 		temp1 = head;
 		i = nodes;
-		while (i)
+		while (i--)
 		{
 			if (temp1 == temp->next)
 			{
@@ -29,9 +29,9 @@ size_t print_listint_safe(const listint_t *head)
 				break;
 			}
 			temp1 = temp1->next;
-			i--;
 		}
 		temp = temp->next;
 	} while (temp && temp != in_cir);
+       	printf("[%p] %d\n", (void *)temp, temp->n);
 	return (nodes);
 }
