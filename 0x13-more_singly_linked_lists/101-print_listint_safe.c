@@ -11,17 +11,18 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t nodes = 0;
+	const listint_t *temp = head, *in_cir;
 
 	if (head == NULL)
 		exit(98);
 
-	while (head->n != 0)
+	do
 	{
 		nodes++;
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-	}
-       	nodes++;
-       	printf("[%p] %d\n", (void *)head, head->n);
+		printf("[%p] %d\n", (void *)temp, temp->n);
+		if (temp == head->next->next)
+			in_cir = temp;
+		temp = temp->next;
+	} while (temp && in_cir != temp);
 	return (nodes);
 }
