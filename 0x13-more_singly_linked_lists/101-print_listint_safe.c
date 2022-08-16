@@ -10,8 +10,8 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nodes = 0;
-	const listint_t *temp = head, *in_cir;
+	size_t nodes = 0, i;
+	const listint_t *temp = head, *temp1, *in_cir;
 
 	if (head == NULL)
 		exit(98);
@@ -20,9 +20,19 @@ size_t print_listint_safe(const listint_t *head)
 	{
 		nodes++;
 		printf("[%p] %d\n", (void *)temp, temp->n);
-		if (temp == head->next->next)
-			in_cir = temp;
+		temp1 = head;
+		i = nodes;
+		while (i)
+		{
+			if (temp1 == temp->next)
+			{
+				in_cir = temp1;
+				break;
+			}
+			temp1 = temp1->next;
+			i--;
+		}
 		temp = temp->next;
-	} while (temp && in_cir != temp);
+	} while (temp && temp != in_cir);
 	return (nodes);
 }
