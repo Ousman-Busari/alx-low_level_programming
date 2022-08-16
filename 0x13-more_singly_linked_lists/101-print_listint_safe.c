@@ -16,8 +16,7 @@ size_t print_listint_safe(const listint_t *head)
 	if (head == NULL)
 		exit(98);
 
-	do
-	{
+	do {
 		nodes++;
 		printf("[%p] %d\n", (void *)temp, temp->n);
 		temp1 = head;
