@@ -32,5 +32,7 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		temp = temp->next;
 	} while (temp && temp != in_cir);
+	if (temp != NULL)
+		printf("-> [%p] %d\n", (void *)temp, temp->n);
 	return (nodes);
 }
