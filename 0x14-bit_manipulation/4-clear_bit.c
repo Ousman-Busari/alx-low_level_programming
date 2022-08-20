@@ -14,7 +14,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	cancel = ~(cancel << index);
 
-	if (cancel == 0)
+	if (cancel == 0 || index > 63)
 		return (-1);
 	*n &= cancel;
 	return (1);
