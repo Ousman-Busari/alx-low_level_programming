@@ -12,6 +12,12 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned long int xor = (n ^ m);
 	unsigned long int max = 0x01;
 
+	if (xor == ULONG_MAX)
+	{
+		flips = 64;
+		return (flips);
+	}
+
 	while (max <= xor)
 	{
 		if (max & xor)
