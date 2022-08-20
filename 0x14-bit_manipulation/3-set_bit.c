@@ -13,7 +13,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned int setter =  0x1;
 
 	setter <<= index;
-	if (setter == 0)
+	if (setter == 0 || index > 63)
 		return (-1);
 
 	*n |= setter;
