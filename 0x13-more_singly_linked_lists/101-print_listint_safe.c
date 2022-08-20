@@ -14,7 +14,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *temp = head, *temp1, *in_cir;
 
 	if (head == NULL)
-		exit(98);
+		return (0);
 
 	do {
 		nodes++;
