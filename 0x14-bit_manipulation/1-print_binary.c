@@ -9,8 +9,9 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int in = 0, max = 32768;
+	unsigned long int in = 0, max = 9223372036854775807;
 
+	max = ~max;
 	if (n == 0)
 	{
 		_putchar('0');
