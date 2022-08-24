@@ -14,7 +14,7 @@ int close_safe(int fd)
 	ret = close(fd);
 	if (ret < 0)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n" fd);
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
 		exit(100);
 	}
 	return (ret);
@@ -32,7 +32,6 @@ int main(int argc, char *argv[])
 {
 	char buffer[1024];
 	int to_fd, from_fd, read_bytes = 0, written_bytes, eof = 1;
-	int from_close_error, to_close_error;
 
 	if (argc != 3)
 	{
