@@ -47,16 +47,10 @@ int main(int argc, char *argv[])
 
 	from_close = close_safe(from_fd);
 	if (from_close < 0)
-	{
-		close_safe(from_fd);
 		exit(100);
-	}
 	to_close = close_safe(to_fd);
 	if (to_close < 0)
-	{
-		close_safe(to_fd);
 		exit(100);
-	}
 	return (0);
 }
 
@@ -111,9 +105,6 @@ int close_safe(int fd)
 
 	ret = close(fd);
 	if (ret < 0)
-	{
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
-		exit(100);
-	}
 	return (ret);
 }
