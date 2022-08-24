@@ -68,18 +68,16 @@ void read_n_write(int from_fd, int to_fd, char *argv[])
 
 	while (eof)
 	{
-		eof = read(from_fd, buffer, 1024);
-		if (eof < 0)
+		read_bytes = read(from_fd, buffer, 1024);
+		if (read_bytes < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n",
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n",
 				argv[1]);
 			close_safe(from_fd);
 			close_safe(to_fd);
 			exit(98);
 		}
-		if (eof == 0)
-			break;
-		read_bytes += eof;
+		eof =  read_bytes;
 		written_bytes = write(to_fd, buffer, eof);
 		if (written_bytes < 0)
 		{
@@ -104,6 +102,6 @@ int close_safe(int fd)
 
 	ret = close(fd);
 	if (ret < 0)
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 	return (ret);
 }
