@@ -48,7 +48,10 @@ int main(int argc, char *argv[])
 	}
 	to_close = close_safe(to_fd);
 	if (to_close < 0)
+	{
+		close_safe(to_fd);
 		exit(100);
+	}
 	return (0);
 }
 
