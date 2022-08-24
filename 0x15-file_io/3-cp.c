@@ -34,7 +34,12 @@ int main(int argc, char *argv[])
 	if (to_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close_safe(from_fd);
+		from_close = close_safe(from_fd);
+		if (from_close < 0)
+		{
+			close_safe(from_fd);
+			exit(100);
+		}
 		exit(99);
 	}
 
