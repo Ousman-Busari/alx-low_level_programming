@@ -6,22 +6,22 @@ int close_error(int fd);
  * error_with_file - prints and exit witht the right code
  * @from_fd: fd of the file to copy from
  * @to_fd: fd of the file to copy to
- *
+ * @argv: array of arguments
  * Return: an integer
  */
 
 void error_with_file(int from_fd, int to_fd, char *argv[])
 {
 	if (from_fd < 0)
-       	{
-   	       	dprintf(STDERR_FILENO, "Error: Can't read file from %s\n",
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read file from %s\n",
 			argv[1]);
 		close(from_fd);
 		exit(98);
 	}
 
 	if (to_fd < 0)
-       	{
+	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close(from_fd);
 		close(to_fd);
@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
 	from_close_error = close(from_fd);
 	to_close_error = close(to_fd);
 	if (from_close_error < 0 || to_close_error < 0)
-       	{
+	{
 		if (from_close_error < 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n",
 				from_fd);
