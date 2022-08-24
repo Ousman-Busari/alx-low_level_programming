@@ -44,14 +44,14 @@ int main(int argc, char *argv[])
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n",
 			argv[1]);
-		exit(97);
+		exit(98);
 	}
 	to_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (to_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close_safe(from_fd);
-		exit(98);
+		exit(99);
 	}
 
 	while (eof)
@@ -63,8 +63,10 @@ int main(int argc, char *argv[])
 				argv[1]);
 			close_safe(from_fd);
 			close_safe(to_fd);
-			exit(97);
+			exit(98);
 		}
+		if (eof == 0)
+			break;
 		read_bytes += eof;
 		written_bytes = write(to_fd, buffer, eof);
 		if (written_bytes < 0)
@@ -73,7 +75,7 @@ int main(int argc, char *argv[])
 				argv[2]);
 			close_safe(from_fd);
 			close_safe(to_fd);
-			exit(98);
+			exit(99);
 		}
 	}
 
