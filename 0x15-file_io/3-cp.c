@@ -12,7 +12,7 @@ int close_error(int fd);
 
 void error_with_file(int from_fd, int to_fd, char *argv[])
 {
-	if (from_fd < 0 || from_fd == NULL)
+	if (from_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read file from %s\n",
 			argv[1]);
