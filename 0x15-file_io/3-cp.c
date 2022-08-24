@@ -10,7 +10,7 @@ int close_error(int fd);
  * Return: an integer
  */
 
-void error_with_file(int file_from, int filt_to, char *argv[])
+void error_with_file(int from_fd, int to_fd, char *argv[])
 {
 	if (from_fd < 0)
 	{
