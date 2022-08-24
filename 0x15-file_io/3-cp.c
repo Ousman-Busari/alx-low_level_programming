@@ -1,24 +1,8 @@
 #include "main.h"
 
-/**
- * close_safe - a fucntion the shows if a file is close safely
- * @fd: the file description of the file to close
- *
- * Return: an integer
- */
+int close_safe(int fd);
+void read_n_write(int from_fd, int to_fd);
 
-int close_safe(int fd)
-{
-	int ret;
-
-	ret = close(fd);
-	if (ret < 0)
-	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
-		exit(100);
-	}
-	return (ret);
-}
 
 /**
  * main - program that copies the content of a file to another file
@@ -31,7 +15,8 @@ int close_safe(int fd)
 int main(int argc, char *argv[])
 {
 	char buffer[1024];
-	int to_fd, from_fd, read_bytes = 0, written_bytes, eof = 1;
+	int to_fd, from_fd, read_bytes = 0, written_bytes;
+	int from_close, to_close;
 
 	if (argc != 3)
 	{
@@ -53,6 +38,52 @@ int main(int argc, char *argv[])
 		close_safe(from_fd);
 		exit(99);
 	}
+
+	read_n_write(from_fd, to_fd);
+
+	from_close = close_safe(from_fd);
+	if (from_close < 0)
+	{
+		close_safe(from_fd);
+		exit(100);
+	}
+	to_close = close_safe(to_fd);
+	if (to_close < 0)
+		exit(100);
+	return (0);
+}
+
+/**
+ * close_safe - a fucntion the shows if a file is close safely
+ * @fd: the file description of the file to close
+ *
+ * Return: an integer
+ */
+
+int close_safe(int fd)
+{
+	int ret;
+
+	ret = close(fd);
+	if (ret < 0)
+	{
+		dprintf(STDERR_FILENO, "Can't close fd %d\n", fd);
+		exit(100);
+	}
+	return (ret);
+}
+
+/**
+ * read_n_write - read from one file and write into the other
+ * @from_fd: desscriptor of the file to read from
+ * @to_fd: descriptor of the file to write to
+ *
+ * Return: nothing
+ */
+
+void read_n_write(int from_fd, int to_fd)
+{
+	int eof = 1;
 
 	while (eof)
 	{
@@ -78,8 +109,4 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-
-	close_safe(from_fd);
-	close_safe(to_fd);
-	return (0);
 }
