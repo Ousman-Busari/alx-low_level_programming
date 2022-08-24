@@ -46,7 +46,8 @@ int main(int argc, char *argv[])
 		close_safe(from_fd);
 		exit(100);
 	}
-       	from_close = close_safe(from_fd);
+
+	from_close = close_safe(from_fd);
 	if (from_close < 0)
 		exit(100);
 	return (0);
