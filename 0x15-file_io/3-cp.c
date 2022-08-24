@@ -10,7 +10,7 @@ int close_error(int fd);
  * Return: an integer
  */
 
-void error_with_file(int from_fd, int to_fd, char *argv[])
+void error_with_file(int file_from, int filt_to, char *argv[])
 {
 	if (from_fd < 0)
 	{
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 
 	from_fd = open(argv[1], O_RDONLY);
 	error_with_file(from_fd, 0, argv);
-	to_fd = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	to_fd = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	error_with_file(0, to_fd, argv);
 
 	while (eof)
