@@ -34,22 +34,20 @@ int main(int argc, char *argv[])
 	if (to_fd < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		from_close = close_safe(from_fd);
-		if (from_close < 0)
-		{
-			close_safe(from_fd);
-			exit(100);
-		}
+		close_safe(from_fd);
 		exit(99);
 	}
 
 	read_n_write(from_fd, to_fd, argv);
 
-	from_close = close_safe(from_fd);
-	if (from_close < 0)
-		exit(100);
 	to_close = close_safe(to_fd);
 	if (to_close < 0)
+	{
+		close_safe(from_fd);
+		exit(100);
+	}
+       	from_close = close_safe(from_fd);
+	if (from_close < 0)
 		exit(100);
 	return (0);
 }
