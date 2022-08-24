@@ -1,11 +1,33 @@
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
 int close_error(int fd);
+
+/**
+ * error_with_file - prints and exit witht the right code
+ * @from_fd: fd of the file to copy from
+ * @to_fd: fd of the file to copy to
+ *
+ * Return: an integer
+ */
+
+void error_with_file(int from_fd, int to_fd, char *argv[])
+{
+	if (from_fd < 0)
+       	{
+   	       	dprintf(STDERR_FILENO, "Error: Can't read file from %s\n",
+			argv[1]);
+		close(from_fd);
+		exit(98);
+	}
+
+	if (to_fd < 0)
+       	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		close(from_fd);
+		close(to_fd);
+		exit(99);
+	}
+}
 
 /**
  * main - program that copies the content of a file to another file
@@ -18,7 +40,8 @@ int close_error(int fd);
 int main(int argc, char *argv[])
 {
 	char buffer[1024];
-	int to_fd, from_fd, read_bytes, written_bytes;
+	int to_fd, from_fd, read_bytes = 0, written_bytes, eof = 1;
+	int from_close_error, to_close_error;
 
 	if (argc != 3)
 	{
@@ -27,47 +50,30 @@ int main(int argc, char *argv[])
 	}
 
 	from_fd = open(argv[1], O_RDONLY);
-	read_bytes = read(from_fd, buffer, 1024);
-	if (from_fd < 0 || read_bytes < 0)
-	{
-   	       	dprintf(STDERR_FILENO, "Error: Can't read file from %s\n",
-			argv[1]);
-		close_error(from_fd);
-		exit(98);
-	}
-
+	error_with_file(from_fd, 0, argv);
 	to_fd = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
-	written_bytes = write(to_fd, buffer, read_bytes);
+	error_with_file(0, to_fd, argv);
 
-	if (to_fd < 0 || written_bytes < 0)
+	while (eof)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		close_error(from_fd);
-		close_error(to_fd);
-		exit(99);
+		eof = read(from_fd, buffer, 1024);
+		error_with_file(read_bytes, 0, argv);
+		read_bytes += eof;
+		written_bytes = write(to_fd, buffer, eof);
+		error_with_file(0, written_bytes, argv);
 	}
-	close_error(from_fd);
-	close_error(to_fd);
-	return (0);
-}
 
-/**
- * close_error - a function tha prints an error message if a file
- * can't be closed
- * @fd: fildes of the file to be closed
- *
- * Return: 0 if successfully closed, -1 if failed
- */
-
-int close_error(int fd)
-{
-	int state;
-
-	state = close(fd);
-	if (state < 0)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+	from_close_error = close(from_fd);
+	to_close_error = close(to_fd);
+	if (from_close_error < 0 || to_close_error < 0)
+       	{
+		if (from_close_error < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n",
+				from_fd);
+		if (to_close_error < 0)
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n",
+				to_fd);
 		exit(100);
 	}
-	return (state);
+	return (0);
 }
