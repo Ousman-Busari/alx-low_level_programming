@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
  * read_n_write - read from one file and write into the other
  * @from_fd: desscriptor of the file to read from
  * @to_fd: descriptor of the file to write to
- *
+ * @argv: array of chars
  * Return: nothing
  */
 
