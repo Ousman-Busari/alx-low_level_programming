@@ -13,7 +13,7 @@
 dlistint_t *insert_dnodeint_at_index(dlistint_t **head, unsigned int idx,
 				     int n)
 {
-	int i = 0;
+	unsigned int i = 0;
 	dlistint_t *temp, *new_node;
 
 	if (idx == 0)
