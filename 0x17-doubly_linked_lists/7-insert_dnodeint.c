@@ -3,7 +3,7 @@
 /**
  * insert_dnodeint_at_index - inserts a node with a given data(n)
  * at a given index(idx)
- * @head: pointer to the head pointer
+ * @h: pointer to the head pointer
  * @idx: index where to insert the newly created node
  * @n: data for the new node
  *
