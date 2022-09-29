@@ -39,5 +39,8 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		i++;
 	}
 
+	if (index >= i)
+		return (-1);
+
 	return (-1);
 }
