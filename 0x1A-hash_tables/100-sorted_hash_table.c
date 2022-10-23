@@ -84,6 +84,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else if (strcmp(ht->shead->key, key) > 0)
 	{
 		new_ele->snext = ht->shead;
+		new_ele->sprev = NULL;
 		ht->shead->sprev = new_ele;
 		ht->shead = new_ele;
 	}
@@ -104,6 +105,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		tmp->snext = new_ele;
 		new_ele->sprev = tmp;
+		new_ele->snext =  NULL;
 		ht->stail = new_ele;
 	}
 	return (1);
@@ -150,9 +152,9 @@ void shash_table_print(const shash_table_t *ht)
 	if (ht == NULL || ht->shead == NULL)
 		return;
 
-	printf("{");
 	tmp = ht->shead;
-	while (tmp != NULL)
+	printf("{");
+	while (tmp)
 	{
 		if (in)
 			printf(", ");
@@ -180,7 +182,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 
 	printf("{");
 	tmp = ht->stail;
-	while (tmp != NULL)
+	while (tmp)
 	{
 		if (in)
 			printf(", ");
@@ -207,7 +209,7 @@ void shash_table_delete(shash_table_t *ht)
 
 	while (ht->shead)
 	{
-		tmp = ht->shead->next;
+		tmp = ht->shead->snext;
 		free(ht->shead->key);
 		free(ht->shead->value);
 		free(ht->shead);
