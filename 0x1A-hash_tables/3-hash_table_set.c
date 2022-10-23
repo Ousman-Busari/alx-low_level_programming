@@ -37,7 +37,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		tmp = tmp->next;
 	}
-	new_ele = malloc(sizeof(hash_node_t *));
+	new_ele = malloc(sizeof(hash_node_t));
 	if (!new_ele)
 		return (0);
 	new_ele->key = strdup(key);
