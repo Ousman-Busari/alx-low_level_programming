@@ -1,28 +1,6 @@
 #include "search_algos.h"
 #include <math.h>
 
-listint_t *jump_to(listint_t *list, size_t index);
-
-/**
- * jump_to - jumps to a node in a sorted list whose
- *           index is eqaul to the one given
- * @list: pointer to the head of the list
- * @index: index value of the node to jump to
- *
- * Return: Pointer to the node with index eqaul to the one given
- */
-listint_t *jump_to(listint_t *list, size_t index)
-{
-	while (list)
-	{
-		if (list->index == index)
-			return (list);
-		list = list->next;
-	}
-
-	return (NULL);
-}
-
 /**
  * jump_list - searches for a value in a sorted list of integers using the
  *             jump search algorithm
@@ -35,38 +13,37 @@ listint_t *jump_to(listint_t *list, size_t index)
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-	size_t i, step, i_max;
-	listint_t *low_pos;
+	size_t i, step;
+	listint_t *low_pos, *jump;
 
 	if (list == NULL)
 		return (NULL);
 
-	i = step = sqrt(size);
+	i = 0;
+	step = sqrt(size);
 
-	for (; i <= size; i += step)
+	for (jump = list; jump->index + 1 < size && jump->n < value;)
 	{
-		i_max = i < size ? i : size - 1;
-		low_pos = jump_to(list, i_max);
+		low_pos = jump;
+		i += step;
+		for (; jump->index < i; jump = jump->next)
+		{
+			if (jump->index + 1 == size)
+				break;
+		}
 		printf("Value checked at index [%ld] = [%d]\n",
-		       i_max, low_pos->n);
-		if (low_pos->n >= value)
-			break;
+		       jump->index, jump->n);
 	}
-
-	i = i_max < i ? i - 2 * step : i - step;
 
 	printf("Value found between indexes [%ld] and [%ld]\n",
-	       i, i_max);
+	       low_pos->index, jump->index);
 
-	low_pos = jump_to(list, i);
-	for (; i <= i_max; i++)
-	{
+	for (; low_pos->index < jump->index &&
+		     low_pos->n < value; low_pos = low_pos->next)
 		printf("Value checked at index [%ld] = [%d]\n",
-		       i, low_pos->n);
-		if (low_pos->n == value)
-			return (low_pos);
-		low_pos = low_pos->next;
-	}
+		       low_pos->index, low_pos->n);
+	printf("Value checked at index [%ld] = [%d]\n",
+	       low_pos->index, low_pos->n);
 
-	return (NULL);
+	return (low_pos->n == value ? low_pos : NULL);
 }
