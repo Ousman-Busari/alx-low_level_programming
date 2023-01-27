@@ -20,7 +20,7 @@ int binary_search_range(int *array, size_t start, size_t end, int value)
 	if (!array)
 		return (-1);
 
-	while (i_start <= i_end && i_end <= end)
+	while (i_start <= i_end)
 	{
 		printf("Searching in array: ");
 		for (i = i_start; i < i_end; i++)
@@ -32,9 +32,10 @@ int binary_search_range(int *array, size_t start, size_t end, int value)
 			return (i_mid);
 		if (array[i_mid] > value)
 			i_end = i_mid - 1;
-		else if (array[i_mid] < value)
+		else
 			i_start = i_mid + 1;
 	}
+
 	return (-1);
 }
 
@@ -52,7 +53,7 @@ int exponential_search(int *array, size_t size, int value)
 {
 	size_t low_bound, bound;
 
-	low_bound = bound = 1;
+	bound = 1;
 
 	if (!array)
 		return (-1);
@@ -68,7 +69,6 @@ int exponential_search(int *array, size_t size, int value)
 	}
 
 	low_bound = bound / 2;
-
 	if (bound >= size)
 		bound = size - 1;
 
