@@ -58,16 +58,15 @@ int exponential_search(int *array, size_t size, int value)
 	if (!array)
 		return (-1);
 
-	if (array[0] == value)
-		return (0);
-
-	while (bound < size && array[bound] <= value)
+	if (array[0] != value)
 	{
-		printf("Value checked array[%ld] = [%d]\n",
-		       bound, array[bound]);
-		bound *= 2;
+		while (bound < size && array[bound] <= value)
+		{
+			printf("Value checked array[%ld] = [%d]\n",
+			       bound, array[bound]);
+			bound *= 2;
+		}
 	}
-
 	low_bound = bound / 2;
 	if (bound >= size)
 		bound = size - 1;
